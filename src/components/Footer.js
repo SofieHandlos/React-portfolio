@@ -18,16 +18,20 @@ export default function Footer() {
       </div>
 
       <div className="some-icons-container">
-        <img
-          className="some-icons"
-          src={FacebookIcon}
-          alt="facebook-icon"
-        ></img>
-        <img
-          className="some-icons"
-          src={LinkedinIcon}
-          alt="linkedin-icon"
-        ></img>
+        <a href="https://www.facebook.com/sofie.handlosthomassen">
+          <img
+            className="some-icons"
+            src={FacebookIcon}
+            alt="facebook-icon"
+          ></img>
+        </a>
+        <a href="https://www.linkedin.com/in/sofie-handlos-thomassen-702158227/">
+          <img
+            className="some-icons"
+            src={LinkedinIcon}
+            alt="linkedin-icon"
+          ></img>
+        </a>
       </div>
     </section>
   );

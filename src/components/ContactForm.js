@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 
 function ContactForm() {
   const form = useRef();
@@ -26,7 +27,7 @@ function ContactForm() {
   };
 
   return (
-    <div className="container">
+    <div className="contact-formular-container">
       <div className="row">
         <div className="col align-self-center">
           {/* <!-- contact form --> */}
@@ -71,9 +72,14 @@ function ContactForm() {
               ></textarea>
             </div>
 
-            <button type="submit" className="btn btn-primary">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.1 }}
+              type="submit"
+              className="btn btn-primary"
+            >
               Send message
-            </button>
+            </motion.button>
           </form>
         </div>
       </div>

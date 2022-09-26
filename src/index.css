@@ -14,36 +14,48 @@ code {
 
 /* ---------- root variables ---------- */
 :root {
-  --beige: #fbf8f3;
-  --dark-beige: #d0cdbe;
-  --dark-brown: #786745;
-  --green: #68a064;
-  --light-grey: #e3e5e6;
-  --green-opacity: rgba(38, 76, ;89, 0.2);
-  --light-green: rgb(172, 198, 201);
-  --text-color-light: #f1f1f1;
-  --text-color-dark: #333;
-  --white: #fff;
-  --font-family: Yeseva-regular-400;
+  --white: #ffffff;
+  --beige: #f9f8f6;
+  --dark-beige: #d0cdc6;
+  --dark-brown: #423431;
+  --darkgreen: #166646;
 }
 
 /* =========== FONT FACES =========== */
 @font-face {
-  font-family: "Yeseva";
-  src: url("./fonts/Yeseva-regular-400.zip");
-  font-weight: 400;
+  font-family: "Raleway-Regular";
+  src: url("./fonts/Raleway-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-Medium";
+  src: url("./fonts/Raleway-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-SemiBold";
+  src: url("./fonts/Raleway-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-Bold";
+  src: url("./fonts/Raleway-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-ExtraBold";
+  src: url("./fonts/Raleway-ExtraBold.ttf");
 }
 
 /* ---------- general styling ---------- */
 html,
 body {
-  color: var(--text-color-dark);
-  font-family: var(--font-family);
+  font-family: Raleway-regular;
   margin: 0;
   padding: 0;
   border: 0;
   outline: 0;
-  background-color: var(--beige);
+  background-color: var(--white);
   position: relative;
   min-height: 100vh;
 }
@@ -53,156 +65,211 @@ h1 {
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 0.5em;
-  color: var(--green);
+  font-family: Raleway-ExtraBold;
+  color: var(--dark-brown);
 }
 
 h2 {
-  font-size: 1.5em;
-  font-weight: 600;
+  font-size: 1.6em;
   letter-spacing: 1.4px;
   margin: 0.2em 0;
+  font-family: "Raleway-SemiBold";
   color: var(--dark-brown);
 }
 
 h3 {
   font-size: 1em;
+  line-height: 1.8em;
+  letter-spacing: 1.5em;
   font-weight: 600;
   letter-spacing: 1px;
-  margin: 0 0 0.2em;
-  color: var(--dark-beige);
+  margin: 0 0 0.3em 0;
 }
 
 a {
   color: var(--green);
+  font-family: Raleway-SemiBold;
+  text-decoration: none;
 }
 
 p {
   margin: 0;
+  font-size: 1em;
+  line-height: 1.5em;
 }
+
+@media only screen and (min-width: 800px) {
+  h1 {
+    font-size: 2.5em;
+  }
+}
+
 /* -------------------- */
 
 /* ---------- nav styling ---------- */
-nav {
-  background-color: var(--dark-beige);
-  top: 0;
-  padding: 15px;
-}
-
-.nav-menu {
-  transform: translateY(100%);
-  right: 0;
-  display: none;
-  transition: ease-in 0.5s;
-}
-
-.nav-active {
-  display: block;
-  transform: translateY(0);
-}
-
-nav a {
+.Navbar {
+  height: 60px;
   display: flex;
-  justify-content: center;
-  color: var(--beige);
-  padding: 40px 0 30px 0;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--darkgreen);
+}
+
+.nav-logo {
+  width: 70px;
+  margin-left: 15px;
+}
+
+.Navbar > .nav-items > a {
+  color: #fff;
+  font-size: 16px;
   text-decoration: none;
-  letter-spacing: 0.1em;
+  margin: 36px;
+  position: relative;
   text-transform: uppercase;
-  font-size: 1em;
-  font-weight: 600;
 }
 
-nav a:hover {
-  color: var(--green);
+.Navbar > .nav-items > a:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
-nav a.active {
-  color: var(--green);
+.Navbar > .nav-items > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.45s;
 }
 
-.hamburger {
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  justify-content: space-around;
-  flex-flow: column nowrap;
+.Navbar > .nav-items > a:hover::before {
+  width: 100%;
 }
 
-.burger {
-  width: 2rem;
-  height: 0.25rem;
-  border-radius: 10px;
-  background-color: black;
-  transform-origin: 1px;
-  transition: all 0.3s linear;
+.Navbar > .nav-toggle {
+  display: none;
 }
 
-@media only screen and (min-width: 700px) {
-  nav a {
-    display: inline-block;
-    padding: 15px;
+@media (max-width: 700px) {
+  .Navbar > .nav-items {
+    position: absolute;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--darkgreen);
+    left: 0;
+    width: 100%;
+    height: 39vh;
+    transform: translateX(-100%);
+    transition: all 0.45s;
+    text-align: center;
   }
 
-  nav {
-    text-align: right;
-    padding-right: 40px;
-    height: 7vh;
+  .Navbar > .nav-items > a::before {
+    background-color: transparent;
   }
 
-  .nav-menu {
-    display: block;
-    transform: translateY(0);
+  .Navbar > .nav-items.open {
+    transform: translateX(0);
   }
 
-  .hamburger {
-    display: none;
+  .Navbar > .nav-toggle {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .nav-toggle > .bar {
+    position: relative;
+    width: 32px;
+    height: 2px;
+    background-color: #fff;
+  }
+
+  .nav-toggle > .bar::before,
+  .nav-toggle > .bar::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.45s ease-in-out;
+  }
+
+  .nav-toggle > .bar::before {
+    width: 25px;
+    transform: translateY(-8px);
+    left: 0;
+  }
+
+  .nav-toggle > .bar::after {
+    width: 32px;
+    transform: translateY(8px);
+  }
+
+  .nav-toggle.open > .bar {
+    transform: translateX(-40px);
+    background-color: transparent;
+  }
+
+  .nav-toggle.open > .bar::before {
+    width: 32px;
+    transform: rotate(45deg) translate(26px, -26px);
+  }
+
+  .nav-toggle.open > .bar::after {
+    width: 32px;
+    transform: rotate(-45deg) translate(26px, 26px);
   }
 }
+
 /* -------------------- */
 
 /* --------- Styling of banner ----------- */
 .banner-container {
-  position: relative;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  color: black;
 }
 
-.banner-image {
+.bannerimage {
   width: 100%;
-  max-width: 100%;
-  height: 500px;
 }
 
 .banner-header {
-  position: relative;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 1em;
 }
 
 .banner-image-button {
   position: relative;
-  border-radius: 15px;
-  padding: 5px 18px 5px 18px;
   font-size: 1.2em;
-  margin: 20px 0 5px 0;
+  margin: 2em 0 0.5em 0;
   text-transform: uppercase;
-  font-weight: 400;
   border: none;
   background-color: transparent;
   cursor: pointer;
+  color: var(--darkgreen);
+  font-weight: 600;
 }
 
 .banner-image-button:hover {
-  color: var(--green);
+  color: var(--dark-brown);
 }
 
 .banner-text-container {
-  margin: 25px 18px 20px 18px;
+  margin: 0 2em 1.5em 2em;
 }
-/* -------------------- */
 
-/* ---------- Styling of busswords ---------- */
+/*  Styling of busswords  */
 .bussword-section {
   background-color: var(--dark-beige);
   display: flex;
@@ -211,7 +278,7 @@ nav a.active {
 }
 
 .bussword-text {
-  padding: 35px;
+  padding: 1.5em;
   color: var(--dark-brown);
 }
 
@@ -238,18 +305,16 @@ nav a.active {
   }
 }
 
-@media only screen and (min-width: 900px) {
-  .banner-header {
-    font-size: 3.5em;
-    position: absolute;
-    top: 24%;
-    right: 5%;
-    width: 40%;
-    line-height: 1.2em;
+@media only screen and (min-width: 800px) {
+  .banner-container {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1em;
   }
 
-  .banner-text-container {
-    padding: 20px;
+  .bannerimage {
+    width: 300px;
+    margin: 2em 0 1em 2em;
   }
 
   .banner-text {
@@ -258,16 +323,20 @@ nav a.active {
 
   .bussword-text {
     font-size: 1.1em;
-    padding: 22px;
+    padding: 3em;
   }
 }
+
+@media only screen and (min-width: 900px) {
+  .bannerimage {
+    width: 600px;
+    margin: 2em 0 1em 2em;
+  }
+}
+
 /* -------------------- */
 
 /* ---------- grid container styling of projectposts ---------- */
-.projects-header {
-  margin-top: 30px;
-}
-
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -312,51 +381,55 @@ nav a.active {
 /* -------------------- */
 
 /* ---------- Contact styling ---------- */
+.contactpage {
+  margin: 1.5em 2em 0 2em;
+}
+
 .contact-text {
-  margin-top: 40px;
   text-align: center;
 }
 
-.contact-header {
-  font-size: 1.5em;
-  margin-top: 25px;
-}
-
-.container {
+.contact-formular-container {
   display: flex;
   justify-content: center;
-  height: 400px;
+  height: 500px;
 }
 
 /* Contactform styling  */
+.row {
+  margin: 2em;
+}
+
 .form-group {
-  margin: 10px;
+  margin: 1em;
 }
 
 input {
   display: block;
-  width: 350px;
+  width: 270px;
   height: 28px;
   border: 1px solid var(--dark-beige);
-  padding: 5px;
+  padding: 0.5em;
 }
 
 textarea {
   display: block;
-  width: 350px;
+  width: 270px;
   height: 80px;
   border: 1px solid var(--dark-beige);
-  padding: 5px;
+  padding: 0.5em;
 }
 
 .btn-primary {
-  width: 360px;
+  width: 285px;
   height: 40px;
   text-transform: uppercase;
-  background-color: var(--dark-beige);
+  background-color: var(--darkgreen);
   color: white;
   border: none;
-  margin-left: 10px;
+  margin-left: 1.2em;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 @media (min-width: 600px) {
@@ -365,9 +438,16 @@ textarea {
     font-size: 1.3em;
   }
 
-  .contact-header {
-    font-size: 1.8em;
-    margin-top: 30px;
+  input {
+    width: 380px;
+  }
+
+  textarea {
+    width: 380px;
+  }
+
+  .btn-primary {
+    width: 397px;
   }
 }
 
@@ -380,15 +460,16 @@ textarea {
   input {
     width: 450px;
   }
+
   textarea {
-    width: 930px;
+    width: 949px;
     height: 80px;
   }
 
   .btn-primary {
-    width: 942px;
+    width: 967px;
     height: 40px;
-    margin-top: 15px;
+    margin-top: 1.5em;
   }
 }
 /* -------------------- */
@@ -396,7 +477,9 @@ textarea {
 /* ---------- Styling af hardskills sektion ---------- */
 .skills-section {
   margin-top: 6em;
-  margin-bottom: 6em;
+  margin-bottom: 4em;
+  padding: 0.3em 0 3.5em 0;
+  background-color: var(--beige);
 }
 
 .sub-header {
@@ -408,10 +491,9 @@ textarea {
 
 .skills-section-subheader {
   text-align: center;
-  line-height: 1.3em;
   margin-bottom: 3em;
-  margin-left: 18px;
-  margin-right: 18px;
+  margin-left: 2em;
+  margin-right: 2em;
 }
 
 .flex-text {
@@ -427,9 +509,9 @@ textarea {
 .eachskillscontainer {
   display: flex;
   flex-flow: row;
-  padding: 20px;
   align-items: center;
   justify-content: center;
+  margin: 1em;
 }
 
 .flex-container {
@@ -439,12 +521,17 @@ textarea {
 }
 
 .box {
-  height: 120px;
+  height: 150px;
   max-width: 600px;
   flex-grow: 1;
 }
 
 @media (min-width: 600px) {
+  .skills-section {
+    padding-bottom: 1em;
+    margin-bottom: 6em;
+  }
+
   .eachskillscontainer {
     justify-content: left;
   }
@@ -452,26 +539,61 @@ textarea {
 /* -------------------- */
 
 /* ---------- About me section ---------- */
+.aboutme-article {
+  margin: 2em;
+}
+
 .aboutme-image {
   width: 100%;
   margin-bottom: 2em;
 }
 
-.aboutme-article {
-  margin: 3em;
+.aboutme-heading {
+  color: var(--dark-brown);
+  font-family: "Raleway-ExtraBold";
+  font-size: 1.1em;
 }
 
-section > article > p {
-  line-height: 1.8rem;
+.aboutme-heading-white {
+  font-family: "Raleway-ExtraBold";
+  font-size: 1.1em;
+  margin-bottom: 1em;
+}
+
+.experiences-container {
+  width: 100%;
+  background-color: var(--darkgreen);
+}
+
+.experiences-container-text {
+  padding: 2em;
+  text-align: center;
+  margin-bottom: 4em;
+  color: var(--white);
 }
 
 @media (min-width: 600px) {
   .aboutme-image {
-    width: 400px;
+    width: 350px;
+    height: 350px;
     float: left;
     margin-right: 3em;
+    box-shadow: 15px 20px;
+    color: var(--darkgreen);
   }
 }
+
+@media (min-width: 900px) {
+  .aboutme-article {
+    margin: 3em;
+  }
+
+  .experiences-container-text {
+    padding: 3.5em;
+    margin-bottom: 6em;
+  }
+}
+
 /* -------------------- */
 
 /* ---------- Soft skills section ---------- */
@@ -489,13 +611,10 @@ section > article > p {
 .soft-skills-grid-container > article {
   text-align: center;
   padding: 2em 1.5em 2em 1.5em;
-  transition: 0.5s;
-  animation: fadeIn 0.5s;
-  cursor: pointer;
 }
 
 .soft-skills-grid-container > article img {
-  width: 70px;
+  height: 85px;
 }
 
 .soft-skills-grid-container > article ::first-letter {
@@ -524,37 +643,69 @@ section > article > p {
 /* -------------------- */
 
 /* ---------- ProjectsPage styling ---------- */
+.second-article-section {
+  background-color: var(--beige);
+  height: 500px;
+  height: 950px;
+  margin-top: 150px;
+  margin-bottom: 180px;
+}
+
 .projectpage-header {
-  margin-left: 18px;
-  margin-bottom: 0.7em;
+  margin-left: 1.2em;
+  padding-bottom: 0.7em;
+  padding-top: 1.5em;
 }
 
 .projectpage-subheader {
-  line-height: 1.3em;
-  margin-bottom: 3em;
-  margin-left: 18px;
-  margin-right: 18px;
+  margin: 0 2em 4em 2em;
 }
 
 .project-flex-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 6em;
+  margin-top: 6em;
+}
+
+.first-project-flex-container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--beige);
+  padding: 3.5em 0 2em 0;
 }
 
 .project-flex-container2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--beige);
+  padding-bottom: 2em;
 }
 
 .project-text-container {
-  background-color: var(--green);
-  width: 230px;
-  height: 230px;
-  line-height: 1.5em;
-  padding: 20px;
+  background-color: var(--darkgreen);
+  color: var(--white);
+  width: 250px;
+  height: auto;
+  padding: 2em;
+}
+
+.projects-button {
+  font-size: 0.9em;
+  margin: 2em 0 0.5em 0;
+  text-transform: uppercase;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.projects-button:hover {
+  color: var(--dark-brown);
 }
 
 .macbook_iphone-container {
@@ -564,37 +715,59 @@ section > article > p {
 }
 
 .macbook {
-  width: 230px;
-}
-
-.iphone {
-  width: 180px;
+  width: 300px;
+  margin-top: 2em;
 }
 
 @media (min-width: 600px) {
-  .sub-header  {
-    text-align: left;
+  .project-text-container {
+    width: 330px;
+    height: auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .projectpage-header {
+    margin-left: 2.5em;
+    padding-bottom: 0.7em;
+    padding-top: 2em;
   }
 
   .projectpage-subheader {
     text-align: left;
     width: 60%;
+    margin: 0 2em 3em 4em;
   }
+
+  .second-article-section {
+    height: 700px;
+    margin-bottom: 100px;
+  }
+
   .project-flex-container {
     flex-direction: row;
     justify-content: space-around;
-    margin: 20px 100px 200px 100px;
+    margin: 2em 6em 12em 6em;
+  }
+
+  .first-project-flex-container2 {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    margin: 2em 0 12em 0;
+    padding: 4em 0 4em 0;
+    height: 400px;
   }
 
   .project-flex-container2 {
     flex-direction: row-reverse;
     justify-content: space-around;
-    margin: 20px 100px 70px 100px;
+    margin: 2em 0 12em 0;
+    height: 400px;
   }
 
   .project-text-container {
     width: 450px;
-    height: 310px;
+    height: auto;
   }
 
   .macbook_iphone-container {
@@ -603,11 +776,13 @@ section > article > p {
   }
 
   .macbook {
-    width: 370px;
+    width: 350px;
   }
+}
 
-  .iphone {
-    width: 230px;
+@media (min-width: 1200px) {
+  .macbook {
+    width: 450px;
   }
 }
 /* -------------------- */
@@ -618,15 +793,14 @@ section > article > p {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 180px;
-  background-color: var(--dark-beige);
+  height: 200px;
 }
 
 .footer-text {
-  color: var(--dark-brown);
+  color: var(--darkbrown);
   text-align: center;
-  padding-top: 15px;
-  padding-bottom: 20px;
+  padding-top: 1.3em;
+  padding-bottom: 1.1em;
   font-size: 1.1rem;
   text-transform: uppercase;
 }
@@ -634,7 +808,7 @@ section > article > p {
 .contactinfo-container {
   display: flex;
   justify-content: center;
-  padding: 5px;
+  padding: 0.2em;
 }
 
 .contact-icons {
@@ -642,7 +816,7 @@ section > article > p {
   height: 20px;
   display: flex;
   align-items: center;
-  margin-right: 10px;
+  margin-right: 1em;
 }
 
 .some-icons-container {
@@ -652,8 +826,8 @@ section > article > p {
 
 .some-icons {
   width: 25px;
-  padding: 0 7px 0 7px;
-  margin-top: 20px;
+  padding: 0 0.5em 0 0.5em;
+  margin-top: 1.5em;
 }
 
 @media (min-width: 600px) {

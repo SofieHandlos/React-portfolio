@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProjectPost from "./ProjectPost";
+import { NavLink } from "react-router-dom";
 
 export default function ProjectPosts() {
   const [posts, setPosts] = useState([]);
@@ -17,13 +18,14 @@ export default function ProjectPosts() {
 
   return (
     <>
-      <h1 className="projects-header">My projects</h1>
-      <h3>Overunderskrifter i denne farve</h3>
-      <section className="grid-container">
-        {posts.map((post) => (
-          <ProjectPost key={post.id} post={post} />
-        ))}
-      </section>
+      <NavLink to="/projects">
+        <h1 className="projects-header">My projects</h1>
+        <section className="grid-container">
+          {posts.map((post) => (
+            <ProjectPost key={post.id} post={post} />
+          ))}
+        </section>
+      </NavLink>
     </>
   );
 }

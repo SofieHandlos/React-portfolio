@@ -15,10 +15,10 @@ export default function HardSkills() {
         Programs and programming languages I have used
       </h2>
       <h3 className="skills-section-subheader">
-        At være god til noget kan ofte være en svær ting at vurdere – især for
-        mig. For hvornår har man 100% styr på Photoshop? Jeg elsker at bruge tid
-        på at nørde, og blive endnu bedere til det jeg allerede er god til. Jeg
-        har taget det med jeg bruger mest.
+        Being good at something can often be a difficult thing to assess -
+        because when do you have 100% control of React? I love to geek out and
+        get even better at what I'm already good at. Here is what I use the
+        most.
       </h3>
 
       <div class="wrapper">
@@ -68,8 +68,8 @@ export default function HardSkills() {
               <div className="flex-text">
                 <h3>Github 3/5</h3>
                 <p>
-                  Ee learned about React at the beginning of the 3rd semester to
-                  be able to program this??????????????????
+                  I have used Gihub to hand in my projects and exams on, since
+                  1st semester.
                 </p>
               </div>
             </div>
@@ -98,7 +98,7 @@ export default function HardSkills() {
               <div className="flex-text">
                 <h3>Adobe XD 5/5</h3>
                 <p>
-                  I have used Adobe XD to make prototypes and it is a program I
+                  I have used Adobe XD to make prototypes. It is a program I
                   really like to work in.
                 </p>
               </div>
@@ -109,11 +109,10 @@ export default function HardSkills() {
             <div className="eachskillscontainer">
               <img className="skills-icons" src={JavaIcon} alt="icon"></img>
               <div className="flex-text">
-                <h3>Javascript 2/5</h3>
+                <h3>JavaScript 2/5</h3>
                 <p>
-                  We had lessons in Javascript in the 2nd semester and it made
-                  me curious to learn more, which is one of the reasons why I
-                  chose frontend in the 3rd semester.
+                  I have had lessons in JavaScript in the 2nd semester. I got
+                  curious to learn more and chose frontend in the 3rd semester.
                 </p>
               </div>
             </div>
@@ -125,22 +124,9 @@ export default function HardSkills() {
               <div className="flex-text">
                 <h3>Visual Studio Code 4/5</h3>
                 <p>
-                  I have programmed in visual studio code since the 1st semester
-                  and am therefore comfortable with it! At my work I have become
+                  I have programmed in Visual Studio Code since 1st semester,
+                  and I am very comfortable with it! At work, I have become
                   acquainted with Webstorm.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="box">
-            <div className="eachskillscontainer">
-              <img className="skills-icons" src={ReactIcon} alt="icon"></img>
-              <div className="flex-text">
-                <h3>React 2/5</h3>
-                <p>
-                  Ee learned about React at the beginning of the 3rd semester to
-                  be able to program this portfolio in React.
                 </p>
               </div>
             </div>

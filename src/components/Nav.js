@@ -1,28 +1,27 @@
-import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import Logo from "../images/logo.png";
+import { NavLink } from "react-router-dom";
 
-export default function Nav() {
-  const [active, setActive] = useState("nav-menu");
-
-  const navToggle = () => {
-    active === "nav-menu"
-      ? setActive("nav-menu nav-active")
-      : setActive("nav-menu");
-  };
-
+const Nav = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav>
-      <div onClick={navToggle} className="hamburger">
-        <div className="burger burger1"></div>
-        <div className="burger burger2"></div>
-        <div className="burger burger3"></div>
-      </div>
-      <div className={active}>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/projects">Projects</NavLink>
-        <NavLink to="/about">About me</NavLink>
+    <nav className="Navbar">
+      <NavLink to="/">
+        <img className="nav-logo" src={Logo} alt="logo"></img>
+      </NavLink>
+      <div className={`nav-items ${isOpen && "open"}`}>
+        <NavLink to="/projects">Portfolio</NavLink>
+        <NavLink to="/about">About</NavLink>
         <NavLink to="/contact">Contact</NavLink>
+      </div>
+      <div
+        className={`nav-toggle ${isOpen && "open"}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <div className="bar"></div>
       </div>
     </nav>
   );
-}
+};
+
+export default Nav;
