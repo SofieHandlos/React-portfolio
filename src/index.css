@@ -275,6 +275,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .bussword-text {
@@ -320,6 +322,10 @@ p {
 
   .banner-text {
     font-size: 1.1em;
+  }
+
+  .bussword-section {
+    padding: 0;
   }
 
   .bussword-text {
