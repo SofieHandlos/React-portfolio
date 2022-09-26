@@ -280,6 +280,7 @@ p {
 .bussword-text {
   padding: 1.5em;
   color: var(--dark-brown);
+  font-size: 0.8em;
 }
 
 .busswords:before {
