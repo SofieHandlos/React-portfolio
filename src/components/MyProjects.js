@@ -8,7 +8,7 @@ export default function MyProjects() {
     <section className="projectpage">
       <h1>My projects</h1>
       <article>
-        <h2 className="projectpage-header">Programmering</h2>
+        <h2 className="projectpage-header">Programming</h2>
         <h3 className="projectpage-subheader">
           In connection with project assignments and exams at the business
           academy, I have designed and developed websites based on the company
@@ -36,7 +36,7 @@ export default function MyProjects() {
                 type="submit"
                 className="projects-button"
               >
-                Link til website &rarr;
+                Link to website &rarr;
               </motion.button>
             </a>
             <br></br>
@@ -47,7 +47,7 @@ export default function MyProjects() {
                 type="submit"
                 className="projects-button"
               >
-                Link til Github &rarr;
+                Link to Github &rarr;
               </motion.button>
             </a>
           </div>

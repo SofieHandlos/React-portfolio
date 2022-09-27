@@ -30,7 +30,7 @@ export default function AboutMeSection() {
         <br></br>
         <br></br>
 
-        <h3 className="aboutme-heading">What do I like to work with</h3>
+        <h3 className="aboutme-heading">What do I like to work with?</h3>
         <p>
           I am very{" "}
           <span style={{ fontWeight: "bold" }}>
@@ -49,7 +49,7 @@ export default function AboutMeSection() {
         <br></br>
         <br></br>
 
-        <h3 className="aboutme-heading">How do I like to work</h3>
+        <h3 className="aboutme-heading">How do I like to work?</h3>
         <p>
           As a person, I am very{" "}
           <span style={{ fontWeight: "bold" }}>
